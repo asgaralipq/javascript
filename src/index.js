@@ -1,11 +1,12 @@
-const person = {
-  name: 'Asgar';
-  walk() {},
-  talk() {}
-};
+function addressMaker(address){
+  const {city,state}=address
 
-person.talk();
-person.name = '';
+  const newAddress = {
+    city,
+    state,
+    country: 'India'
+  };
+  console.log(`${newAddress.city}, ${newAddress.state}, ${newAddress.country}`)
+}
 
-const targetMember = 'nam e';
-person[targetMember.value] = 'Asgar';
+addressMaker({city: 'Mumbai', state:'MH'})
