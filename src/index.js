@@ -1,5 +1,8 @@
-let numArray = [1,2,3,4,5];
+let example = 'https://www.youtube.com/watch?v=nZ1DMMsyVyI'
 
-console.log(numArray.includes(2))
+console.log(example.padStart(100).length)
 
-// Not IE
+
+console.log(example.padEnd(1))
+
+//padstart padend
