@@ -1,16 +1,7 @@
-let incomes=[100,200,300]
-let total=0;
+let example1 = [1,2,3,4,5];
+let example2= [...example1];
+example2.push(true);
 
-for (const income of incomes) {
-  console.log(income);
-  total=total+income;
-}
-
-
-let fullName="Asgar"
-
-for (const char of fullName){
-  console.log(char)
-}
+console.log(example2)
 
 
