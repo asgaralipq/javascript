@@ -1,8 +1,6 @@
-let example = 'https://www.youtube.com/watch?v=nZ1DMMsyVyI'
+import { Animal, Cat } from "./animal"
 
-console.log(example.padStart(100).length)
+let cat = new Animal('Cat',4);
 
-
-console.log(example.padEnd(1))
-
-//padstart padend
+cat.legs = 3;
+cat.makeNoise()
