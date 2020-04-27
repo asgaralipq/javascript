@@ -1,43 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+<head>
+	<meta charset="UTF-8">
+	<title>Photo Gallery</title>
+  <link rel="stylesheet" href="/src/gallery.css">
+  <style>
+    /*Name this external file gallery.css*/
+body{
+    margin: 2%;
+    border: 1px solid black;
+    background-color: #b3b3b3;
+}
+#image{
+    line-height:650px;
+    width: 575px;
+    height: 650px;
+    border:5px solid black;
+    margin:0 auto;
+    background-color: #8e68ff;
+    background-image: url('');
+    background-repeat: no-repeat;
+    color:#FFFFFF;
+    text-align: center;
+    background-size: 100%;
+    margin-bottom:25px;
+    font-size: 150%;
+}
+.preview{
+    width:10%;
+    margin-left:17%;
+    border: 10px solid black;
+}
+img{
+    width:95%;
+}
+  </style>
+	
+</head>
+<body>
+	
+	<div id = "image">
+		Hover over an image below to display here.
+	</div>
+	
+	<img class = "preview" alt = "Styling with a Bandana" src = "https://s3-us-west-2.amazonaws.com/s.cdpn.io/389177/bacon.jpg" onmouseover = "upDate(this)" onmouseout = "unDo()">
+	
+	<img class = "preview" alt = "With My Boy" src = "https://s3-us-west-2.amazonaws.com/s.cdpn.io/389177/bacon2.JPG" onmouseover = "upDate(this)" onmouseout = "unDo()">
+	
+	<img class = "preview" src = "https://s3-us-west-2.amazonaws.com/s.cdpn.io/389177/bacon3.jpg" alt = "Young Puppy" onmouseover = "upDate(this)" onmouseout = "unDo()">
+  <script >
+    /*Name this external file gallery.js*/
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+function upDate(previewPic){
+    var img = document.getElementById("image");
+    img.style = `background-image: url(${previewPic.src})`;
+    img.innerHTML = previewPic.alt;
+    /* In this function you should 
+      1) change the url for the background image of the div with the id = "image" 
+      to the source file of the preview image
+      
+      2) Change the text  of the div with the id = "image" 
+      to the alt text of the preview image 
+      */
+    
+      }
+  
+function unDo(){
+       /* In this function you should 
+      1) Update the url for the background image of the div with the id = "image" 
+      back to the orginal-image.  You can use the css code to see what that original URL was
+       
+      2) Change the text  of the div with the id = "image" 
+      back to the original text.  You can use the html code to see what that original text was
+      */
+    var img = document.getElementById("image");
+    img.style = "background-image:url('')";
+    img.innerHTML = 'Hover over an image below to display here.';
+      }
+  </script>
+</body>
 </html>
